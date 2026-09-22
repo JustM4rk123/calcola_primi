@@ -1,0 +1,17 @@
+# Ambienti virtuali
+.venv/
+venv/
+env/
+ENV/
+
+# Artefatti di build e distribuzione
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Cache e file temporanei Python
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
