@@ -1,5 +1,6 @@
 # Calcola primi
 
+
 Piccolo progetto Python che usa la **crivella di Eratostene** per calcolare la percentuale di numeri primi compresi tra `0` e un valore massimo indicato dall'utente.
 
 ## Requisiti
@@ -23,7 +24,9 @@ Il file `requirements.txt` contiene:
 
 ## Utilizzo
 
-Avvia il programma come modulo Python:
+Il programma può essere eseguito con o senza flag:
+
+Senza flag:
 
 ```powershell
 python -m calcola_primi
@@ -33,6 +36,25 @@ Inserisci il numero massimo quando richiesto. Per esempio:
 
 ```text
 Fino a che numero vuoi calcolare i numeri primi? 100
+Il 25.0% dei numeri sono primi
+```
+
+Con flag:
+
+```powershell
+python -m calcola_primi -n [numero]
+```
+
+O,
+
+```powershell
+python -m calcola_primi --numero [numero]
+```
+
+Esempio:
+
+```powershell
+python -m calcola_primi -n 100
 Il 25.0% dei numeri sono primi
 ```
 
@@ -56,7 +78,7 @@ La funzione restituisce la percentuale di numeri primi tra `0` e `n`, inclusi gl
 Esegui la suite con:
 
 ```powershell
-pytest
+python -m pytest
 ```
 
 I test verificano i risultati della crivella su valori diversi e i casi limite.
@@ -76,6 +98,7 @@ calcola_primi/
 │       └── verifica.py
 └── tests/
 	├── test_calcola_primi.py
+	├── test_cli.py
 	└── test_verifica.py
 ```
 
