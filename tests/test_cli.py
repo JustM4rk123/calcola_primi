@@ -2,9 +2,9 @@ import subprocess
 import sys
 
 
-def test_terminale_con_flag():
+def test_cli_with_flag():
     result = subprocess.run(
-        [sys.executable, "-m", "calcola_primi", "-n", "50"],
+        [sys.executable, "-m", "prime_calculator", "-n", "50"],
         capture_output=True,
         text=True,
         check=True,
@@ -13,9 +13,9 @@ def test_terminale_con_flag():
     assert "30" in result.stdout
 
 
-def test_terminale_senza_flag():
+def test_cli_without_flag():
     result = subprocess.run(
-        [sys.executable, "-m", "calcola_primi"],
+        [sys.executable, "-m", "prime_calculator"],
         input="50\n",
         capture_output=True,
         text=True,

@@ -1,108 +1,108 @@
-# Calcola primi
+# Prime Number Calculator
 
 
-Piccolo progetto Python che usa la **crivella di Eratostene** per calcolare la percentuale di numeri primi compresi tra `0` e un valore massimo indicato dall'utente.
+Small Python project that uses the **Sieve of Eratosthenes** to calculate the percentage of prime numbers between `0` and a maximum value provided by the user.
 
-## Requisiti
+## Requirements
 
-- Python 3.10 o superiore
+- Python 3.10 or later
 - `pip`
 
-## Installazione
+## Installation
 
-Dalla cartella principale del progetto, installa le dipendenze elencate in `requirements.txt`:
+From the project root, install the dependencies listed in `requirements.txt`:
 
 ```powershell
 python -m pip install -r requirements.txt
 python -m pip install -e .
 ```
 
-Il file `requirements.txt` contiene:
+The `requirements.txt` file contains:
 
-- [`bitarray`](https://pypi.org/project/bitarray/), usata per rappresentare in modo efficiente i valori primi e non primi.
-- `pytest`, usato per eseguire i test automatici.
+- [`bitarray`](https://pypi.org/project/bitarray/), used to efficiently represent prime and non-prime values.
+- `pytest`, used to run the automated tests.
 
-## Utilizzo
+## Usage
 
-Il programma può essere eseguito con o senza flag:
+The program can be run with or without a flag:
 
 Senza flag:
 
 ```powershell
-python -m calcola_primi
+python -m prime_calculator
 ```
 
-Inserisci il numero massimo quando richiesto. Per esempio:
+Enter the maximum number when prompted. For example:
 
 ```text
-Fino a che numero vuoi calcolare i numeri primi? 100
-Il 25.0% dei numeri sono primi
+Up to which number should prime numbers be calculated? 100
+25.0% of the numbers are prime
 ```
 
 Con flag:
 
 ```powershell
-python -m calcola_primi -n [numero]
+python -m prime_calculator -n [number]
 ```
 
-O,
+Or:
 
 ```powershell
-python -m calcola_primi --numero [numero]
+python -m prime_calculator --number [number]
 ```
 
 Esempio:
 
 ```powershell
-python -m calcola_primi -n 100
-Il 25.0% dei numeri sono primi
+python -m prime_calculator -n 100
+25.0% of the numbers are prime
 ```
 
-Il valore inserito deve essere un numero intero non negativo. Un valore negativo produce un `ValueError`.
+The provided value must be a non-negative integer. A negative value raises a `ValueError`.
 
 ## Uso come libreria
 
-La funzione `crivella` è disponibile direttamente dal pacchetto:
+The `sieve` function is available directly from the package:
 
 ```python
-from calcola_primi import crivella
+from prime_calculator import sieve
 
-percentuale = crivella(100)
-print(percentuale)  # 25.0
+percentage = sieve(100)
+print(percentage)  # 25.0
 ```
 
-La funzione restituisce la percentuale di numeri primi tra `0` e `n`, inclusi gli estremi. Per valori minori di `2` restituisce `0`.
+The function returns the percentage of prime numbers between `0` and `n`, inclusive. It returns `0` for values below `2`.
 
-## Test
+## Tests
 
-Esegui la suite con:
+Run the test suite with:
 
 ```powershell
 python -m pytest
 ```
 
-I test verificano i risultati della crivella su valori diversi e i casi limite.
+The tests verify sieve results for different values and edge cases.
 
 ## Struttura del progetto
 
 ```text
-calcola_primi/
+prime_calculator/
 ├── pyproject.toml
 ├── requirements.txt
 ├── README.md
 ├── src/
-│   └── calcola_primi/
+│   └── prime_calculator/
 │       ├── __init__.py
 │       ├── __main__.py
 │       ├── core.py
-│       └── verifica.py
+│       └── validation.py
 └── tests/
-	├── test_calcola_primi.py
+	├── test_prime_calculator.py
 	├── test_cli.py
-	└── test_verifica.py
+	└── test_validation.py
 ```
 
-- `core.py`: implementa la crivella di Eratostene.
-- `verifica.py`: controlla la validità del numero inserito.
-- `__main__.py`: gestisce l'esecuzione da terminale.
-- `tests/`: contiene i test automatici.
+- `core.py`: implements the Sieve of Eratosthenes.
+- `validation.py`: validates the provided number.
+- `__main__.py`: handles command-line execution.
+- `tests/`: contains the automated tests.
