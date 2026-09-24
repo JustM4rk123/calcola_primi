@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "prime-calculator"
-version = "0.2.1"
+version = "0.3.0"
 dependencies = ["bitarray"]
 
 [project.optional-dependencies]
