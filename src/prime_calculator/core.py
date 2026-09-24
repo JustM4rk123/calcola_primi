@@ -56,5 +56,4 @@ def small_sieve(n: int) -> list[int]:
         if prime_flags[i]:
             prime_flags[i * i :: i] = 0
 
-    return [i for i in range(n+1) if prime_flags[i]]
-    
+    return [i for i in range(n + 1) if prime_flags[i]]
