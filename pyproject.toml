@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "prime-calculator"
-version = "0.3.0"
+version = "0.3.1"
 dependencies = ["bitarray"]
 
 [project.optional-dependencies]
@@ -16,3 +16,6 @@ testpaths = ["tests"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[project.scripts]
+speedtest = "prime_calculator.speedtest:speedtest"
